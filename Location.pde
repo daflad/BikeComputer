@@ -21,7 +21,7 @@ class DataPoint {
   String toString() { 
     return String.format("Lat: %0.2f\nLon: %0.2f\nAcc: %0.2f\nTime %s", this.latitude, this.longitude, this.accuracy, this.cTime());
   }
-
+  
   String cTime() {
     long second = (this.time / 1000) % 60;
     long minute = (this.time / (1000 * 60)) % 60;
