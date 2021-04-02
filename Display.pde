@@ -26,13 +26,13 @@ class Display {
       fill(0, 0, 0, 255);
       textSize(25);
       text(me.getKey(), x+(this.WidthOfCell/2), y + (this.HeightOfCell/3) - (this.Padding*4));
-      if (row != 3) {
+      if (row != int(this.NumberOfRows)) {
         textSize(52);
       }
       text(me.getValue(), x+(this.WidthOfCell/2), y + (this.HeightOfCell/3*2) - this.Padding);
       x += this.WidthOfCell;
-      count++;    
-      if (count == 3) {
+      count++;
+      if (count == this.NumberOfCols) {
         count = 0;
         x = 0;
         y += this.HeightOfCell;
