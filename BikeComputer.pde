@@ -3,7 +3,7 @@ import ketai.sensors.KetaiLocation;
 KetaiLocation location;
 ArrayList<DataPoint> data;
 Display display;
-LinkedHashMap<String, String> hm;
+HashMap<String, String> hm;
 
 void setup() {
   orientation(PORTRAIT);
@@ -15,8 +15,7 @@ void setup() {
   double lastLat = location.getLocation().getLatitude();
   data.add(new DataPoint(0.0, 0.0, 0.0, 0.0, lastLat, lastLong, 0.0, 0, 0));
   display = new Display(3, 3, 10);
-  LinkedHashMap<String, String> hm = new LinkedHashMap<String, String>();
-  loadTestData();
+  hm = loadTestData();
 }
 
 void draw() {
@@ -24,14 +23,16 @@ void draw() {
   display.draw(hm);
 }
 
-void loadTestData() {
-  hm.put("Speed", "10");
-  hm.put("Average", "35");
-  hm.put("Distance", "36");
-  hm.put("Altitude", "189");
-  hm.put("Climbing", "3598");
-  hm.put("Heart Rate", "136");
-  hm.put("RideTime", "0:01:23");
-  hm.put("TimeTime", "15:43");
-  hm.put("START", "PAUSE");
+HashMap<String, String> loadTestData() {
+  HashMap<String, String> testData = new LinkedHashMap<String, String>();
+  testData.put("Speed", "10");
+  testData.put("Average", "35");
+  testData.put("Distance", "36");
+  testData.put("Altitude", "189");
+  testData.put("Climbing", "3598");
+  testData.put("Heart Rate", "136");
+  testData.put("RideTime", "0:01:23");
+  testData.put("TimeTime", "15:43");
+  testData.put("START", "PAUSE");
+  return testData;
 }

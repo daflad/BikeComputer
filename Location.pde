@@ -17,8 +17,8 @@ class DataPoint {
     this.time = time;
     this.bearing = bearing;
   }
-  
-  String toString() { 
+
+  String toString() {
     return String.format("Lat: %0.2f\nLon: %0.2f\nAcc: %0.2f\nTime %s", this.latitude, this.longitude, this.accuracy, this.cTime());
   }
   
@@ -33,16 +33,15 @@ class DataPoint {
 }
 
 void onLocationEvent(Location _location) {
-  double speed = _location.getSpeed();  //(1) 
-  double bearing = _location.getBearing();  //(2)
+  double speed = _location.getSpeed();
+  double bearing = _location.getBearing();
   double longitude = _location.getLongitude();
   double latitude = _location.getLatitude();
   double altitude = _location.getAltitude();
   double accuracy = _location.getAccuracy();
-  long time = _location.getTime();  
+  long time = _location.getTime();
   double lastLong = longitude;
-  double lastLat = latitude; 
-  
+  double lastLat = latitude;
   data.add(new DataPoint(longitude, latitude, altitude, accuracy, lastLong, lastLat, speed, time, bearing));
 }
 

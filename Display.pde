@@ -1,9 +1,5 @@
 class Display {
-  float NumberOfCols;
-  float NumberOfRows;
-  float Padding;
-  float WidthOfCell;
-  float HeightOfCell;
+  float NumberOfCols, NumberOfRows, Padding, WidthOfCell, HeightOfCell;
 
   Display(float numberOfCols, float numberOfRows, float padding) {
     this.NumberOfCols = numberOfCols;
@@ -13,8 +9,7 @@ class Display {
     this.HeightOfCell = height / numberOfRows;
   }
   
-  void draw(LinkedHashMap<String,String> data) {
-    Map<String, String> hm = data;
+  void draw(Map<String, String> hm) {
     float x = 0;
     float y = 0;
     int count = 0;
